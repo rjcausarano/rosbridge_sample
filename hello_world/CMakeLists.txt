@@ -16,5 +16,10 @@ catkin_package(
 add_executable(talker src/talker.cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
 
-install(TARGETS talker
+add_executable(listener src/listener.cpp)
+target_link_libraries(listener ${catkin_LIBRARIES})
+
+install(TARGETS
+  talker
+  listener
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
